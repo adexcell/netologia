@@ -94,7 +94,7 @@ for animal in animals:
 
 print('\n Животных кормить дважды в день! с 6 до 8 утра, и с 18 до 20 вечера.')
 print("Сейчас:", time.strftime("%H:%M"))
-if 6<now.tm_hour<8 or 18<now.tm_hour<20:
+if 6<=now.tm_hour<=8 or 18<=now.tm_hour<=20:
     print(' \nПокорми моих животных: ')
     for animal in animals:
         animal.names()
