@@ -15,7 +15,6 @@ def allert(x):
   if x not in operands:
     print('Ошибка!')     
 
-
 def main_menu():
   operands = ['+', '-', '*', '/']
   print('''
@@ -52,9 +51,4 @@ def main_menu():
       
     assert operation[0] in ['+', '-', '*', '/'], 'Используйте: "+", "-", "*", "/"'
 
-  
-
 main_menu()
-
-operands = ['+', '-', '*', '/']
-
