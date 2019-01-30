@@ -13,6 +13,8 @@ class Animal:
         self.weight = weight
         self.voice = voice
 
+    def __gt__(self, other):
+        return ((self.weight) > (other.weight))
     
     def names(self):
         print("  {} ".format(self.name))
@@ -106,12 +108,8 @@ for animal in animals:
     total_weight = total_weight + animal.weight
 print('\nОбщий вес всех животных: ', format(total_weight))
 
-heaviest_animal = None
+animals.sort()
 for animal in animals:
-    if heaviest_animal is None:
-        heaviest_animal = animal
-    elif animal.weight > heaviest_animal.weight:
-        heaviest_animal = animal
-print('Самое тяжёлое животное: {}, имеет вес: {} кг, издаёт звук: {} '.format(heaviest_animal.name,
-                                                                              heaviest_animal.weight,
-                                                                              heaviest_animal.voice))
+  heaviest_animal = animal
+print('Самое тяжёлое животное: {}, имеет вес: {} кг, издаёт звук: {} '.format(heaviest_animal.name,heaviest_animal.weight, heaviest_animal.voice))
+
