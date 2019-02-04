@@ -1,0 +1,32 @@
+import time
+
+class Time:
+
+    def __init__(self):
+        self.begin = time.time()
+        print('\n//  начало выполнения кода:  {}'
+              .format(time.strftime("%H:%M:%S", time.localtime(self.begin))))
+
+    def __enter__(self):
+        pass
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.end = time.time()
+        timedelta = self.end - self.begin
+        print('//  время выполнения:  {} сек.'.format(timedelta))
+        print('//  окончание выполнения кода:  {}\n'
+              .format(time.strftime("%H:%M:%S", time.localtime(self.end))))
+
+
+if __name__ == '__main__':
+
+  print('Опять не можешь уснуть?? Лень считать овец в уме?')
+  
+  sheeps = int(input('Сколько овец в стаде: '))
+  fences = int(input('Kак сильно ты хочешь спать от 1 до 10: '))
+  
+  with Time() as timer:
+    def count_sheeps(fence, sheep):
+      return sheep**fence
+
+  print('Ого! Овцы перепрыгнули забор {} раз! Они устали и тоже пошли спать...'.format(count_sheeps(fences, sheeps)))
